@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>
+        {%if page.use-site-title %}
+          {{ site.title }} {{ site.title-separator }} {{ site.description }}
+        {% elsif page.title %}
+          {{ page.title }}
+        {% else %}
+          {{ site.title }}
+        {% endif %}
+      </title>
+      {% if site.author.name %}
+      <meta name="author" content="{{ site.author.name }}" />
+      {% endif %}
+      {% if page.subtitle %}
+        <meta name="description" content="{{ page.subtitle }}">
+      {% endif %}
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>
